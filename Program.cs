@@ -187,8 +187,7 @@ app.MapPost("api/todoitems", async (Todo todo, HttpContext httpContext, TodoDb d
     if (user is null) return Results.NotFound (
         @"Authorization kısımda kullanıncı bilgileri girmeniz gerek. ya da girdikleriniz yanlıştır"
     );
-    //Kullanıcı idsi eklenmesi
-    todo.Id = userId;
+  
 
     db.Todos.Add(todo);
     await db.SaveChangesAsync();
